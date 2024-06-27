@@ -1,0 +1,622 @@
+/* General */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Encabezado */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #007BFF;
+    color: white;
+}
+
+header .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #FF5733;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+header nav ul li a:hover {
+    color: #ff6f61;
+}	
+
+header .header-icons {
+    display: flex;
+    gap: 20px;
+}
+
+header .header-icons .icon img {
+    width: 24px;
+    height: 24px;
+}
+
+header .btn {
+    padding: 10px 20px;
+    background-color: white;
+    color: #007BFF;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+header .btn:hover {
+    background-color: #0056b3;
+    color: white;
+}
+
+/* Sección de img con Slider */
+.hero {
+    background-image: url(pexels-tdcat-69866.jpg); /* Ruta de la imagen */
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    color: white;
+    padding: 100px 20px;
+}
+
+.hero h1 {
+    font-size: 48px;
+}
+
+.hero p {
+    font-size: 24px;
+    margin: 20px 0;
+}
+
+.hero .btn {
+    padding: 15px 30px;
+    background-color: #FF5733;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+/* Sección de Destinos Populares */
+.destinos {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+.destinos h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.destinos .galeria {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.destinos .destino {
+    text-align: center;
+}
+
+.destinos .destino img {
+    width: 200px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Sección de Ofertas Especiales */
+.ofertas {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #F8F9FA;
+}
+
+.ofertas h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.ofertas .tarjetas {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.ofertas .tarjeta {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+}
+
+.ofertas .tarjeta img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.ofertas .tarjeta h3 {
+    margin: 15px 0;
+    font-size: 24px;
+}
+
+.ofertas .tarjeta p {
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+.ofertas .tarjeta .precio {
+    font-size: 20px;
+    color: #007BFF;
+    font-weight: bold;
+}
+
+.ofertas .tarjeta .btn {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+/* Sección de Testimonios */
+.testimonios {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.testimonios h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.testimonios .testimonio {
+    margin: 20px 0;
+    font-style: italic;
+}
+
+/* Sección de Información Adicional */
+.info-adicional {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #F8F9FA;
+}
+
+.info-adicional h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.info-adicional ul {
+    list-style: none;
+    padding: 0;
+}
+
+.info-adicional ul li {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+/* Pie de Página */
+footer {
+    padding: 20px;
+    background-color: #343A40;
+    color: white;
+    text-align: center;
+}
+
+footer .enlaces,
+footer .redes-sociales,
+footer .contacto {
+    margin-bottom: 20px;
+}
+
+footer .enlaces a,
+footer .redes-sociales a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+footer .redes-sociales img {
+    width: 24px;
+    height: 24px;
+}
+/* Página de Registro */
+main.registro {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+}
+
+main.registro h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+main.registro form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+main.registro form label {
+    font-weight: bold;
+}
+
+main.registro form input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+main.registro form button {
+    padding: 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+main.registro form button:hover {
+    background-color: #0056b3;
+}
+
+main.registro .opciones-recuperacion {
+    margin-top: 20px;
+    text-align: center;
+}
+
+main.registro .opciones-recuperacion a {
+    display: block;
+    color: #007BFF;
+    text-decoration: none;
+    margin-top: 10px;
+}
+
+main.registro .opciones-recuperacion a:hover {
+    text-decoration: underline;
+}
+
+/* Página de Recuperación */
+main.recuperacion {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+}
+
+main.recuperacion h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+main.recuperacion form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+main.recuperacion form label {
+    font-weight: bold;
+}
+
+main.recuperacion form input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+main.recuperacion form button {
+    padding: 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+main.recuperacion form button:hover {
+    background-color: #0056b3;
+}
+#foto{
+    max-width: 40%;
+    height: auto;
+    margin: 20px;
+    padding: 5px;
+    display: inline-block;
+    margin: auto;
+}
+
+#foto2{
+    max-width: 40%;
+    height: auto;
+    margin: 20px;
+    padding: 5px;
+    display: inline-block;
+    margin: auto;
+}
+
+#foto3{
+    max-width: 40%;
+    height: auto;
+    margin: 20px;
+    padding: 5px;
+    display: inline-block;
+    margin: auto;
+}
+
+/* Estilos para la página de destinos */
+.destinos {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+.destinos h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #ff6f61;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-family: 'Arial', sans-serif;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.destinos p {
+    font-size: 18px;
+    margin-bottom: 40px;
+    color: #333;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+}
+
+.globe-container {
+    width: 100%;
+    height: 500px;
+    position: relative;
+    background-color: #000;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+footer .enlaces, footer .redes-sociales, footer .contacto, footer .suscripcion {
+    margin-bottom: 20px;
+}
+
+footer .enlaces a, footer .redes-sociales a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 10px;
+}
+
+footer .suscripcion h2 {
+    margin-bottom: 10px;
+}
+
+footer .suscripcion form {
+    display: flex;
+    gap: 10px;
+}
+
+footer .suscripcion form input {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+footer .suscripcion form button {
+    padding: 10px 20px;
+    background-color: #ff6f61;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+footer .suscripcion form button:hover {
+    background-color: #e55a50;
+}
+
+/* Estilos adicionales para la página sobre_nosotros */
+.sobre-nosotros {
+    padding: 50px;
+}
+
+.equipo {
+    text-align: center;
+}
+
+.plantilla-3d {
+    width: 90%;
+    height: 600px; /* Ajusta la altura según sea necesario */
+    margin: 0 auto;
+    border: 2px solid #ccc;
+    border-radius: 10px;    
+}
+
+.miembro-equipo {
+    margin: 20px;
+    width: 200px;
+}
+
+.miembro-equipo img {
+    width: 100%;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.miembro-equipo p {
+    margin: 0; 
+}
+
+/* Añadir transición a los botones */
+.btn, header .btn, .ofertas .tarjeta .btn {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn:hover, header .btn:hover, .ofertas .tarjeta .btn:hover {
+    background-color: #0056b3;
+    color: #fff;
+}
+
+/* Slider */
+.slider {
+    position: relative;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.slide {
+    display: none;
+}
+
+.slide.active {
+    display: block;
+}
+
+.slider-controls {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
+
+.slider-controls .prev,
+.slider-controls .next {
+    cursor: pointer;
+    padding: 16px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-size: 24px;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    header nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .hero p {
+        font-size: 18px;
+    }
+
+    .ofertas .tarjetas {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .info-adicional ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #foto, #foto2, #foto3 {
+        max-width: 80%;
+    }
+}
+
+footer .suscripcion form input {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    flex-grow: 1;
+}
+
+footer .suscripcion form button {
+    padding: 10px 20px;
+    background-color: #ff6f61;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+footer .suscripcion form button:hover {
+    background-color: #e64a19;
+}
+
+/* Estilos para el Carrito de Compras */
+.carrito {
+    padding: 50px;
+    text-align: center;
+}
+
+.carrito h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.pagos {
+    margin-bottom: 20px;
+}
+
+.datos-pago {
+    margin-bottom: 20px;
+}
+
+.comprar {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.comprar:hover {
+    background-color: #0056b3;
+}
+
+.compra-segura {
+    margin-top: 20px;
+}
+
+.compra-segura img {
+    max-width: 200px;
+    height: auto;
+}

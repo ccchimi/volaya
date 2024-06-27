@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Usuario</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html">VOLA Ya!</a>
+        </div>
+    </header>
+
+    <main class="registro">
+        <h2>Crear Cuenta</h2>
+        <form action="submit_registration.php" method="post">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+            
+            <label for="apellido">Apellido:</label>
+            <input type="text" id="apellido" name="apellido" required>
+            
+            <label for="usuario">Usuario:</label>
+            <input type="text" id="usuario" name="usuario" required>
+            
+            <label for="correo">Correo Electrónico:</label>
+            <input type="email" id="correo" name="correo" required>
+            
+            <label for="fecha_nacimiento">Fecha de Nacimiento:</label>
+            <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" required>
+            
+            <label for="contrasena">Contraseña:</label>
+            <input type="password" id="contrasena" name="contrasena" required>
+            
+            <button type="submit">Registrar</button>
+        </form>
+        
+        <div class="opciones-recuperacion">
+            <a href="recuperar_contrasena.html">Olvidé mi contraseña</a>
+            <a href="recuperar_usuario.html">Olvidé mi nombre de usuario</a>
+        </div>
+    </main>
+</body>
+</html>

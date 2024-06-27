@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destinos - VOLA Ya!</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/globe.gl"></script>
+    <script src="https://d3js.org/topojson.v1.min.js"></script>
+</head>
+<body>
+    <!-- Encabezado -->
+    <header>
+        <div class="logo">VOLA Ya!</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="destinos.html">Destinos</a></li>
+                <li><a href="#">Ofertas</a></li>
+                <li><a href="sobre_nosotros.html">Sobre Nosotros</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+        </nav>
+        <div class="header-icons">
+            <a href="registro.html" class="icon">
+                <img src="usuario.png" alt="Login">
+            </a>
+            <a href="carrito.html" class="icon">
+                <img src="carrito-de-compras.png" alt="Carrito de Compras">
+            </a>
+        </div>
+        <a href="#" class="btn">Reserva Ahora</a>
+    </header>
+
+    <!-- Sección de Destinos -->
+    <section class="destinos">
+        <h1>Destinos</h1>
+        <p>Explora nuestros destinos y elige tu próxima aventura.</p>
+        <div id="globeViz" class="globe-container"></div>
+    </section>
+    
+    <script>
+        const worldMapUrl = 'https://unpkg.com/three-globe/example/img/earth-blue-marble.jpg'; 
+        const worldBumpMapUrl = 'https://unpkg.com/three-globe/example/img/earth-topology.png';
+        const backgroundImageUrl = 'https://unpkg.com/three-globe/example/img/night-sky.png';
+
+        const myGlobe = Globe()
+            (document.getElementById('globeViz'))
+            .globeImageUrl(worldMapUrl)
+            .bumpImageUrl(worldBumpMapUrl)
+            .backgroundImageUrl(backgroundImageUrl)
+            .polygonCapColor(() => 'rgba(200, 0, 0, 0.6)')
+            .polygonSideColor(() => 'rgba(0, 100, 0, 0.15)')
+            .polygonStrokeColor(() => '#111')
+            .onPolygonHover(hoverD => myGlobe
+                .polygonAltitude(d => d === hoverD ? 0.12 : 0.06)
+                .polygonCapColor(d => d === hoverD ? 'rgba(255, 255, 255, 0.8)' : 'rgba(200, 0, 0, 0.6)'))
+            .onPolygonClick(d => {
+                alert(`País: ${d.properties.ADMIN}\nCosto estimado del vuelo: $${Math.floor(Math.random() * 1000) + 100} USD`);
+            });
+
+        fetch('https://unpkg.com/world-atlas@1.1.4/world/110m.json').then(res => res.json()).then(worldData => {
+            const countries = topojson.feature(worldData, worldData.objects.countries);
+            myGlobe.polygonsData(countries.features);
+        });
+
+        myGlobe.controls().enableZoom = true;
+    </script>
+</body>
+</html>

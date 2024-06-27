@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Nosotros - VOLA Ya!</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <!-- Agrega cualquier otro enlace a hojas de estilo si es necesario -->
+</head>
+<body>
+    <!-- Encabezado -->
+    <header>
+        <div class="logo">VOLA Ya!</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="destinos.html">Destinos</a></li>
+                <li><a href="#">Ofertas</a></li>
+                <li><a href="sobre_nosotros.html">Sobre Nosotros</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+        </nav>
+        <!-- Agrega cualquier otro contenido del encabezado si es necesario -->
+    </header>
+
+    <!-- Contenido principal -->
+    <main>
+        <section class="sobre-nosotros">
+            <h1>Sobre Nosotros</h1>
+            <p>Información sobre la empresa VOLA Ya y su equipo.</p>
+
+            <!-- Información sobre la empresa -->
+            <div class="info-empresa">
+                <h2>Información de la Empresa</h2>
+                <p>Aquí puedes colocar información detallada sobre la empresa VOLA Ya, su historia, misión, visión, valores, etc.</p>
+                <p>También puedes incluir información sobre el CEO de la empresa.</p>
+            </div>
+
+            <!-- Plantilla 3D del equipo -->
+            <div class="equipo">
+                <h2>Nuestro Equipo</h2>
+                <div class="plantilla-3d" id="plantilla-3d-container"></div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Pie de Página con Formulario de Suscripción -->
+    <footer>
+        <div class="enlaces">
+            <a href="index.html">Inicio</a>
+            <a href="destinos.html">Destinos</a>
+            <a href="ofertas.html">Ofertas</a>
+            <a href="sobre_nosotros.html">Sobre Nosotros</a>
+            <a href="contacto.html">Contacto</a>
+        </div>
+        <div class="redes-sociales">
+            <a href="#"><img src="facebook.png" alt="Facebook"></a>
+            <a href="#"><img src="instagram.png" alt="Instagram"></a>
+            <a href="#"><img src="logotipos.png" alt="Twitter"></a>
+        </div>
+        <div class="contacto">
+            <p>Dirección: Neuquen 2321, Flores C1406</p>
+            <p>Teléfono: +54 9 11-3780-6899</p>
+            <p>Email: contacto@volaya.com</p>
+        </div>
+        <div class="suscripcion">
+            <h2>Suscríbete a nuestro boletín</h2>
+            <form>
+                <input type="email" placeholder="Tu correo electrónico" required>
+                <button type="submit">Suscribirse</button>
+            </form>
+        </div>
+    </footer>
+
+    <!-- Agrega cualquier script necesario para la plantilla 3D aquí -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script>
+        // Código para la creación de la plantilla 3D
+        // Aquí puedes definir los modelos, colores, animaciones, etc.
+    
+        // Creamos la escena, la cámara y el renderizador
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer();
+        renderer.setSize(document.querySelector('.plantilla-3d').clientWidth, document.querySelector('.plantilla-3d').clientHeight);
+        document.getElementById('plantilla-3d-container').appendChild(renderer.domElement);
+    
+        // Crea una luz
+        const light = new THREE.PointLight(0xffffff);
+        light.position.set(10, 10, 10);
+        scene.add(light);
+    
+        // Agrega cualquier geometría, materiales, luces y objetos necesarios para tu plantilla 3D
+        const geometry = new THREE.BoxGeometry(50, 50, 50); // Tamaño de cada caja
+        const material = new THREE.MeshPhongMaterial({ color: 0x00ff00 }); // Material
+        const cube = new THREE.Mesh(geometry, material); // Caja
+        scene.add(cube);
+    
+        // Posiciona la cámara
+        camera.position.z = 100;
+    
+        // Función para renderizar la escena
+        function animate() {
+            requestAnimationFrame(animate);
+            cube.rotation.x += 0.01;
+            cube.rotation.y += 0.01;
+            renderer.render(scene, camera);
+        }
+        animate();
+    </script>
+</body>
+</html>
